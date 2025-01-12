@@ -26,12 +26,12 @@ end
 ---@param config HarpoonConfig
 local function fullpath(config)
     local fn = filename(config)
-    if config.settings.use_git_branch_name then
+    --if config.settings.use_git_branch_name then
         local gitbranch = vim.fn.system("git symbolic-ref --short HEAD 2>/dev/null"):gsub("\n", "")
         if gitbranch ~= "" then
             fn = fn .. gitbranch
         end
-    end
+    --end
     local h = hash(fn)
     return string.format("%s/%s.json", data_path, h)
 end
