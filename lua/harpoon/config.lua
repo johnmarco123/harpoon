@@ -31,6 +31,7 @@ M.DEFAULT_LIST = DEFAULT_LIST
 ---@class HarpoonSettings
 ---@field save_on_toggle boolean defaults to false
 ---@field sync_on_ui_close? boolean
+---@field use_git_branch_name? boolean
 ---@field key (fun(): string)
 
 ---@class HarpoonPartialSettings
@@ -60,6 +61,7 @@ function M.get_default_config()
         settings = {
             save_on_toggle = false,
             sync_on_ui_close = false,
+            use_git_branch_name = false,
 
             key = function()
                 return vim.loop.cwd()
